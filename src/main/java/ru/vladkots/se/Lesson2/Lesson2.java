@@ -18,6 +18,8 @@ public class Lesson2 {
         System.out.println();
         //task 3
         changeArr();
+        //task 4
+        fillDiag();
     }
 
     public static void fillArr() {
@@ -35,6 +37,19 @@ public class Lesson2 {
         for (int i = 0; i < charr.length; i++) {
             if (charr[i] < 6) charr[i] = charr[i] * 2;
             System.out.print(charr[i] + " ");
+        }
+    }
+    public static void fillDiag() {
+        int[][] arr = new int[3][3];
+        System.out.println();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (i == 0 && j != 1) arr[i][j] = 1;
+                if (i == 1 && j == 1) arr[i][j] = 1;
+                if (i == 2 && j != 1) arr[i][j] = 1;
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }
