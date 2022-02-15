@@ -20,6 +20,15 @@ public class Lesson2 {
         changeArr();
         //task 4
         fillDiag();
+        //task 5
+        findMinMax();
+        //task 6
+        int[] arr61 = {1, 1, 1, 2, 1};
+        System.out.println(checkBalance(arr61));
+        int[] arr62 = {2, 2, 2, 2, 2};
+        System.out.println(checkBalance(arr62));
+        int[] arr63 = {2, 1, 1, 2, 1};
+        System.out.println(checkBalance(arr63));
     }
 
     public static void fillArr() {
@@ -39,6 +48,7 @@ public class Lesson2 {
             System.out.print(charr[i] + " ");
         }
     }
+
     public static void fillDiag() {
         int[][] arr = new int[3][3];
         System.out.println();
@@ -51,6 +61,37 @@ public class Lesson2 {
             }
             System.out.println();
         }
+    }
+
+    public static void findMinMax() {
+        int[] arr = {5, 4, 17, 2, 58, 31, 26, 7, 33};
+        {
+            int a, b;
+            a = arr[0];
+            b = arr[0];
+            for (int i = 0; i < arr.length; i++) {
+                if (a > arr[i]) a = arr[i];
+                if (b < arr[i]) b = arr[i];
+            }
+            System.out.println("Наименьший элемент массива: " + a);
+            System.out.println("Наибольший элемент массива: " + b);
+        }
+    }
+
+    public static boolean checkBalance(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+        }
+        if ((sum % 2) == 0) {
+            int a = 0;
+            sum = sum / 2;
+            for (int i = 0; i < arr.length; i++) {
+                a = a + arr[i];
+                if (a == sum) return true;
+            }
+        }
+        return false;
     }
 }
 
