@@ -29,6 +29,8 @@ public class Lesson2 {
         System.out.println(checkBalance(arr62));
         int[] arr63 = {2, 1, 1, 2, 1};
         System.out.println(checkBalance(arr63));
+        int[] arr64 = {20, 20};
+        System.out.println(checkBalance(arr64));
     }
 
     public static void fillArr() {
@@ -86,9 +88,11 @@ public class Lesson2 {
         if ((sum % 2) == 0) {
             int a = 0;
             sum = sum / 2;
-            for (int i = 0; i < arr.length; i++) {
+            int i = 0;
+            while (i < arr.length && a <= sum) {
                 a = a + arr[i];
                 if (a == sum) return true;
+                i++;
             }
         }
         return false;
